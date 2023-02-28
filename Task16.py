@@ -10,11 +10,13 @@
 
 lst = []
 n = int(input("Введите количество элементов в массиве: "))
-x = int(input(f'Введите число от 1 до {n}: '))
+lst = input(f'Введите через пробел список чисел длиной {n} элементов: ').split()
+while len(lst) != n:
+   lst = input(f'Вы ввели неверно! Введите через пробел список чисел длиной {n} элементов: ').split()
+x = int(input(f'Введите число, которое необходимо найти в списке: '))
 count = 0
-for i in range(1, n+1):
-    lst.append(i)
-    if i == x:
+for i in range(n):
+    if int(lst[i]) == x:
         count +=1
 print(lst)
 print(f'Число {x} встречается в массиве {count} раз')
