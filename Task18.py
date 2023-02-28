@@ -10,12 +10,14 @@
 
 lst = []
 n = int(input("Введите количество элементов в массиве: "))
-x = int(input(f'Введите число: '))
-max = 0
-for i in range(1, n+1):
-    lst.append(i)
-    if i > max and x > i:
-        max = i
-    elif x == i:
-        max = i
+lst = input(f'Введите через пробел список чисел длиной {n} элементов: ').split()
+while len(lst) != n:
+   lst = input(f'Вы ввели неверно! Введите через пробел список чисел длиной {n} элементов: ').split()
+x = int(input(f'Введите число, которое необходимо найти: '))
+max = int(lst[0])
+for i in range(n):
+    if int(lst[i]) > max and x > int(lst[i]):
+        max = int(lst[i])
+    elif x == int(lst[i]):
+        max = int(lst[i])
 print(f' В массиве {lst} ближайшее к числу {x} число {max}')
