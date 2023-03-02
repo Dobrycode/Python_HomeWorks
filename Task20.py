@@ -12,14 +12,18 @@
 # ноутбук
 #     12
 
-dict1 = {"1": "AEIOULNSTR", "2": "DG", "3": "BCMP", "4": "FHVWY", "5": "K", "8": "JX", "10": "QZ"}
+dict1 = {1: "AEIOULNSTR", 2: "DG", 3: "BCMP", 4: "FHVWY", 5: "K", 8: "JX", 10: "QZ"}
+dict2 = {1: "АВЕИНОРСТ", 2: "ДКЛМПУ", 3: "БГЁЬЯ", 4: "ЙЫ", 5: "ХЗЖЦЧ", 8: "ШЭЮ", 10: "ФЩЪ"}
 name = input("Введите слово: ").upper()
-lst = []
 count = 0
-for values in dict:
-    if name in dict1.values:
-        print(i)
-        count += int(dict.keys)
-        print(count)
-
-## ПОКА ЧТО НЕ ГОТОВО
+if name[0] in "QWERTYIOPASDFGHJKLZXCVBNM":
+    for letter in name:
+        for key,value in dict1.items():
+            if letter in value:
+                count += key
+else:
+    for letter in name:
+        for key,value in dict2.items():
+            if letter in value:
+                count += key
+print(count)
